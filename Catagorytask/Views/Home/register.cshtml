@@ -1,0 +1,46 @@
+﻿@model Catagorytask.Models.Register_Table
+
+@{
+    Layout = null;
+}
+
+
+
+
+@using (Html.BeginForm("register", "Home", FormMethod.Post, new { onsubmit = "return SubmitForm(this)" }))
+{
+    <h4>Fill the User details...</h4>
+    <div class="form-group">
+        @Html.LabelFor(model => model.Username, htmlAttributes: new { @class = "control-label col-md-2" })
+
+        @Html.EditorFor(model => model.Username, new { htmlAttributes = new { @class = "form-control" } })
+        @Html.ValidationMessageFor(Model => Model.Username)
+
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(model => model.Email, htmlAttributes: new { @class = "control-label col-md-2" })
+        @Html.EditorFor(model => model.Email, new { htmlAttributes = new { @class = "form-control" } })
+        @Html.ValidationMessageFor(Model => Model.Email)
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(model => model.PassWord, htmlAttributes: new { @class = "control-label col-md-2" })
+        @Html.EditorFor(model => model.PassWord, new { htmlAttributes = new { @class = "form-control" } })
+        @Html.ValidationMessageFor(Model => Model.PassWord)
+    </div>
+
+
+    <div class="form-group">
+        <input type="submit" value="submit" class="btn btn-primary" />
+        <input type="reset" value="Reset" class="btn btn-warning" />
+    </div>
+
+}
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

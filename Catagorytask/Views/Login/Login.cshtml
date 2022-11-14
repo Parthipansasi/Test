@@ -1,0 +1,108 @@
+﻿
+@model Catagorytask.Models.Register_Table
+@{
+    ViewBag.Title = "login";
+}
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        body {
+            background-image: url('../../assets/asset-management-word-cloud-business-concept-57283472.jpg');
+           
+        }
+        body, html {
+            height: 100%;
+            margin: 0;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        .bg-image {
+            /* The image used */
+            background-image: url('../../assets/asset-management-word-cloud-business-concept-57283472.jpg');
+            /* Add the blur effect */
+            filter: blur(8px);
+            -webkit-filter: blur(8px);
+            /* Full height */
+            height: 100%;
+            /* Center and scale the image nicely */
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+
+        /* Position text in the middle of the page/image */
+        .bg-text {
+            background-color: rgb(0,0,0); /* Fallback color */
+            background-color: rgba(0,0,0, 0.4); /* Black w/opacity/see-through */
+            color: white;
+            font-weight: bold;
+            border: 3px solid #f1f1f1;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            z-index: 2;
+            width: 80%;
+            padding: 20px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body >
+    <div class="bg-image"></div>
+    <div class="bg-text">
+        
+            @using (Html.BeginForm())
+            {
+                @Html.AntiForgeryToken()
+                <form>
+                    <div class="loginForm">
+                        <div>
+                         <h1 style="font-size:30px">Login</h1>
+                            <hr />
+                            @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+
+                            <div class="form-group">
+                                @Html.LabelFor(model => model.Username, htmlAttributes: new { @class = "control-label" })
+                                <div>
+                                    @Html.EditorFor(model => model.Username, new { htmlAttributes = new { @class = "form-control" } })
+                                    @Html.ValidationMessageFor(model => model.Username, "", new { @class = "text-danger" })
+                                </div>
+                            </div>
+
+
+
+                            <div class="form-group">
+                                @Html.LabelFor(model => model.PassWord, htmlAttributes: new { @class = "control-label" })
+                                <div>
+                                    @Html.PasswordFor(model => model.PassWord, new { htmlAttributes = new { @class = "form-control" } })
+                                    @Html.ValidationMessageFor(model => model.PassWord, "", new { @class = "text-danger" })
+                                </div>
+                            </div>
+
+
+                            <div class="form-group">
+
+                                <input type="submit" value="Log In" class="btn btn-warning"/>
+
+                            </div>
+                        </div>
+
+                    </div>
+
+
+                </form>
+            }
+        
+    </div>
+</body>
+
+<link href="~/Content/Css.css" rel="stylesheet" />
+</html>
+
+

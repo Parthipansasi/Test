@@ -1,0 +1,22 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="sapModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="AllCatagory_Table2">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Sno" Type="Int32" />
+    <Property Name="Catagory" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Quantity" Type="Int32" />
+    <Property Name="Created_on" Type="DateTime" Precision="3" />
+    <Property Name="Created_by" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Updated_on" Type="DateTime" Precision="3" />
+    <Property Name="Updated_by" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Price" Type="Int32" />
+    <Property Name="Status_report" Type="Boolean" />
+  </EntityType>
+  <EntityContainer Name="sapEntities3" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="AllCatagory_Table2" EntityType="Self.AllCatagory_Table2" />
+  </EntityContainer>
+</Schema>

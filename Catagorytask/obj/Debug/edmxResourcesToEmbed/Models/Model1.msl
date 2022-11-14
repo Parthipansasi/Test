@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="sapModelStoreContainer" CdmEntityContainer="sapEntities">
+    <EntitySetMapping Name="AllCatagory_Tables">
+      <EntityTypeMapping TypeName="sapModel.AllCatagory_Table">
+        <MappingFragment StoreEntitySet="AllCatagory Table">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Catagory" ColumnName="Catagory" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Quantity" ColumnName="Quantity" />
+          <ScalarProperty Name="Created_on" ColumnName="Created_on" />
+          <ScalarProperty Name="Created_by" ColumnName="Created_by" />
+          <ScalarProperty Name="Updated_on" ColumnName="Updated_on" />
+          <ScalarProperty Name="Updated_by" ColumnName="Updated_by" />
+          <ScalarProperty Name="Price" ColumnName="Price" />
+          <ScalarProperty Name="Status_report" ColumnName="Status_report" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

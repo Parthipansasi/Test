@@ -1,0 +1,72 @@
+﻿
+@model Catagorytask.Models.Register_Table
+@{
+    ViewBag.Title = "login";
+}
+<!DOCTYPE html>
+<html>
+<head>
+
+</head>
+<body>
+    <p style="background-image">
+        <img src="~/assets/asset-management-word-cloud-business-concept-57283472.jpg" />
+    </p>
+    @using (Html.BeginForm())
+    {
+        @Html.AntiForgeryToken()
+        <form>
+            <div class="loginForm">
+                <div>
+                    <h1>Login</h1>
+                    <hr />
+                    @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+
+                    <div class="form-group">
+                        @Html.LabelFor(model => model.Username, htmlAttributes: new { @class = "control-label" })
+                        <div>
+                            @Html.EditorFor(model => model.Username, new { htmlAttributes = new { @class = "form-control" } })
+                            @Html.ValidationMessageFor(model => model.Username, "", new { @class = "text-danger" })
+                        </div>
+                    </div>
+
+
+
+                    <div class="form-group">
+                        @Html.LabelFor(model => model.PassWord, htmlAttributes: new { @class = "control-label" })
+                        <div>
+                            @Html.PasswordFor(model => model.PassWord, new { htmlAttributes = new { @class = "form-control" } })
+                            @Html.ValidationMessageFor(model => model.PassWord, "", new { @class = "text-danger" })
+                        </div>
+                    </div>
+
+
+                    <div class="form-group">
+                        <div style="float: right">
+                            <input type="submit" value="Log In" class="btn btn-warning" />
+                        </div>
+                    </div>
+
+
+                    @*<div class="overlay-containers">
+                            <div class=" overlay">
+                                <ul class="nav navbar-nav">
+                                    <li>@Html.ActionLink("Register", "register", "Login")</li>
+
+
+                                </ul>
+                            </div>
+                        </div>*@
+                </div>
+
+            </div>
+
+
+        </form>
+    }
+</body>
+
+<link href="~/Content/Css.css" rel="stylesheet" />
+</html>
+
+

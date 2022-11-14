@@ -1,0 +1,108 @@
+﻿@model Catagorytask.Models.AllCatagory_Table1
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Index</title>
+</head>
+<body> 
+    <div>
+        <h4>Are you sure you want Delete the data...?</h4>
+        <hr />
+        <dl class="dl-horizontal">
+            <dt>
+                @Html.DisplayNameFor(model => model.Sno)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Sno)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.Catagory)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Catagory)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.Name)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Name)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.Quantity)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Quantity)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.Created_on)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Created_on)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.Created_by)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Created_by)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.Updated_on)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Updated_on)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.Updated_by)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Updated_by)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.Price)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Price)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.Status_report)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Status_report)
+            </dd>
+
+        </dl>
+    </div>
+    @using (Html.BeginForm("Delete", "Home", FormMethod.Post, new { onsubmit = "return SubmitForm(this)" }))
+    {
+        <div class="form-group">
+            <input type="submit" value="Delete" class="btn btn-warning" />
+            @Html.ActionLink("Back to List", "Index")
+        </div>
+    }
+</body>
+</html>
